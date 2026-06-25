@@ -32,6 +32,9 @@ resource "azurerm_kubernetes_cluster" "aks" {
   dns_prefix          = "${var.student_name}-aks"
   tags                = local.common_tags
 
+  # Fixes the 400 Bad Request error by explicitly keeping OIDC enabled
+  oidc_issuer_enabled = true
+
   default_node_pool {
     name       = "default"
     node_count = var.aks_node_count
