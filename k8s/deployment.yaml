@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudscale-app
+  labels:
+    app: cloudscale-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cloudscale-app
+  template:
+    metadata:
+      labels:
+        app: cloudscale-app
+    spec:
+      containers:
+        - name: cloudscale-app
+          image: ayoubfinalacr.azurecr.io/cloudscale-app:latest   # ← updated by CI/CD pipeline automatically
+          ports:
+            - containerPort: 3000
+
+          # Readiness probe – Kubernetes waits for this before sending traffic
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            failureThreshold: 3
+
+          # Liveness probe – Kubernetes restarts the pod if this fails
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+            failureThreshold: 3
+
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
