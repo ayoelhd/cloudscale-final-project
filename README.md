@@ -4,12 +4,12 @@
 
 | Name | Student ID |
 |------|-----------|
-| [Your Name] | [Your ID] |
-| [Teammate 2] | [ID] |
-| [Teammate 3] | [ID] |
-| [Teammate 4] | [ID] |
-| [Teammate 5] | [ID] |
-| [Teammate 6] | [ID] |
+| [Ayoub Elhaddad] | [5179] |
+| [Mohamed Aldarbag] | [4955] |
+| [Abdullah Fahmi] | [4827] |
+| [Mohamed Bin Hilal] | [4957] |
+| [Anas Gorman] | [5038] |
+
 
 ---
 
@@ -203,8 +203,7 @@ docker push yournamefinalacr.azurecr.io/cloudscale-app:latest
 
 ## Repository Link
 
-https://github.com/YOURUSERNAME/final-project-cloudscale
-
+https://github.com/ayoelhd/cloudscale-final-project
 ---
 
 ## ⚠️ Cost Reminder
