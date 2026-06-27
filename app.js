@@ -70,7 +70,7 @@ const HTML = `<!DOCTYPE html>
       <span class="tag">Kubernetes</span>
       <span class="tag">GitHub Actions</span>
     </div>
-    <div class="footer">Cloud Computing &amp; DevOps Engineering · 2026</div>
+    <div class="footer">Cloud Computing &amp; DevOps Engineering · 2026 | Served at: ${new Date().toLocaleString()}</div>
   </div>
 </body>
 </html>`;
